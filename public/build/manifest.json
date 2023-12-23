@@ -1,0 +1,86 @@
+{
+  "_lodash-e3769e0d.js": {
+    "file": "assets/lodash-e3769e0d.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-400-normal.woff": {
+    "file": "assets/source-sans-3-cyrillic-400-normal-c6839e81.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-400-normal.woff2": {
+    "file": "assets/source-sans-3-cyrillic-400-normal-352d7754.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-ext-400-normal.woff": {
+    "file": "assets/source-sans-3-cyrillic-ext-400-normal-41121224.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-ext-400-normal.woff2": {
+    "file": "assets/source-sans-3-cyrillic-ext-400-normal-0b14c1e1.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-400-normal.woff": {
+    "file": "assets/source-sans-3-greek-400-normal-0bc7b79c.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-400-normal.woff2": {
+    "file": "assets/source-sans-3-greek-400-normal-fc6f901d.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-400-normal.woff2"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-ext-400-normal.woff": {
+    "file": "assets/source-sans-3-greek-ext-400-normal-1d3749fa.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-ext-400-normal.woff2": {
+    "file": "assets/source-sans-3-greek-ext-400-normal-45276e1f.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff": {
+    "file": "assets/source-sans-3-latin-400-normal-eebf448d.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2": {
+    "file": "assets/source-sans-3-latin-400-normal-78e22177.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-ext-400-normal.woff": {
+    "file": "assets/source-sans-3-latin-ext-400-normal-0023c050.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-ext-400-normal.woff2": {
+    "file": "assets/source-sans-3-latin-ext-400-normal-82013c35.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-vietnamese-400-normal.woff": {
+    "file": "assets/source-sans-3-vietnamese-400-normal-8bdbcdb1.woff",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/source-sans-3/files/source-sans-3-vietnamese-400-normal.woff2": {
+    "file": "assets/source-sans-3-vietnamese-400-normal-e5ad6fee.woff2",
+    "src": "node_modules/@fontsource/source-sans-3/files/source-sans-3-vietnamese-400-normal.woff2"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-40f14c01.woff",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-ae167342.woff2",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  },
+  "resources/js/app.js": {
+    "dynamicImports": [
+      "_lodash-e3769e0d.js"
+    ],
+    "file": "assets/app-e87310ea.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-52dbdddf.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}
