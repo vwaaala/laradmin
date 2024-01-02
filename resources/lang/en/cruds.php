@@ -46,8 +46,8 @@ return [
         'fields'         => [
             'id'                       => 'ID',
             'id_helper'                => '',
-            'name'                     => 'Name',
-            'name_helper'              => '',
+            'title'                     => 'Full Name',
+            'title_helper'              => 'Enter user full name',
             'email'                    => 'Email',
             'email_helper'             => '',
             'email_verified_at'        => 'Email verified at',

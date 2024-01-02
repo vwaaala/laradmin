@@ -9,14 +9,14 @@
             </div>
         </div>
     @endcan
-    <div class="card">
+    <div class="card card-info card-outline mb-4">
         <div class="card-header">
             {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
         </div>
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered datatable datatable-User">
+                <table class="table table-responsive-sm datatable datatable-User">
                     <thead>
                     <tr>
                         <th width="10">
