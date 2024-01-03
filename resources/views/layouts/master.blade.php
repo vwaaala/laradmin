@@ -18,8 +18,8 @@
 
 <body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary"><!--begin::App Wrapper-->
 <div class="app-wrapper"><!--begin::Header-->
-    @include('partials.navbar')<!--end::Header--><!--begin::Sidebar-->
-    @include('partials.sidebar')<!--end::Sidebar--><!--begin::App Main-->
+    @include('layouts.partials.navbar')<!--end::Header--><!--begin::Sidebar-->
+    @include('layouts.partials.sidebar')<!--end::Sidebar--><!--begin::App Main-->
     <main class="app-main"><!--begin::App Content Header-->
         <div class="app-content-header"><!--begin::Container-->
             <div class="container-fluid"><!--begin::Row-->
@@ -56,7 +56,7 @@
             </div><!--end::Container-->
         </div><!--end::App Content-->
     </main><!--end::App Main--><!--begin::Footer-->
-    @include('partials.footer')<!--end::Footer-->
+    @include('layouts.partials.footer')<!--end::Footer-->
 </div><!--end::App Wrapper--><!--begin::Log out-->
 <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
     {{ csrf_field() }}

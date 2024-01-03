@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
-Route::redirect('/', '/login');
+Route::get('/', function (){
+    return view('pages.portfolio.home');
+});
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -12,9 +14,7 @@ Route::get('/home', function () {
 
     return redirect()->route('admin.home');
 });
-Route::get('/test', function (){
-    return view('pages.dashboard');
-});
+
 Auth::routes();
 // Admin
 
