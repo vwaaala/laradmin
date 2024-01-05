@@ -7,6 +7,7 @@ return [
     'available_languages'       => [
         'en' => 'English',
         'bd' => 'Bengali',
+        'sp' => 'Spanish', 
     ],
     'registration_default_role' => '2',
 ];
