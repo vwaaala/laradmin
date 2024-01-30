@@ -1,35 +1,41 @@
 @extends('layouts.master')
 @section('content')
-    @can('role_create')
+    @can('user_create')
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route("admin.roles.create") }}">
-                    {{ trans('global.add') }} {{ trans('cruds.role.title_singular') }}
+                <a class="btn btn-success" href="{{ route("admin.users.create") }}">
+                    {{ trans('global.add') }} {{ trans('cruds.user.title_singular') }}
                 </a>
             </div>
         </div>
     @endcan
-    <div class="card">
+    <div class="card card-info card-outline mb-4">
         <div class="card-header">
-            {{ trans('cruds.role.title_singular') }} {{ trans('global.list') }}
+            {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
         </div>
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class=" table table-bordered table-striped table-hover datatable datatable-Role">
+                <table class="table table-responsive-sm datatable datatable-User">
                     <thead>
                     <tr>
                         <th width="10">
 
                         </th>
                         <th>
-                            {{ trans('cruds.role.fields.id') }}
+                            {{ trans('cruds.user.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.role.fields.title') }}
+                            {{ trans('cruds.user.fields.title') }}
                         </th>
                         <th>
-                            {{ trans('cruds.role.fields.permissions') }}
+                            {{ trans('cruds.user.fields.email') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.user.fields.email_verified_at') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.user.fields.roles') }}
                         </th>
                         <th>
                             &nbsp;
@@ -37,37 +43,43 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($roles as $key => $role)
-                        <tr data-entry-id="{{ $role->id }}">
+                    @foreach($users as $key => $user)
+                        <tr data-entry-id="{{ $user->id }}">
                             <td>
 
                             </td>
                             <td>
-                                {{ $role->id ?? '' }}
+                                {{ $user->id ?? '' }}
                             </td>
                             <td>
-                                {{ $role->title ?? '' }}
+                                {{ $user->name ?? '' }}
                             </td>
                             <td>
-                                @foreach($role->permissions as $key => $item)
-                                    <span class="badge badge-info">{{ $item->title }}</span>
+                                {{ $user->email ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->email_verified_at ?? '' }}
+                            </td>
+                            <td>
+                                @foreach($user->roles as $key => $item)
+                                    <span class="badge text-bg-dark">{{ $item->title }}</span>
                                 @endforeach
                             </td>
                             <td>
-                                @can('role_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.roles.show', $role->id) }}">
+                                @can('user_show')
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('role_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.roles.edit', $role->id) }}">
+                                @can('user_edit')
+                                    <a class="btn btn-xs btn-warning" href="{{ route('admin.users.edit', $user->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('role_delete')
-                                    <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST"
+                                @can('user_delete')
+                                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST"
                                           onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
                                           style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
@@ -82,6 +94,9 @@
                         </tr>
                     @endforeach
                     </tbody>
+                    <tfoot>
+                    {{ $users->links() }}
+                    </tfoot>
                 </table>
             </div>
         </div>
@@ -93,11 +108,11 @@
     <script>
         $(function () {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-            @can('role_delete')
+            @can('user_delete')
             let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
             let deleteButton = {
                 text: deleteButtonTrans,
-                url: "{{ route('admin.roles.massDestroy') }}",
+                url: "{{ route('admin.users.massDestroy') }}",
                 className: 'btn-danger',
                 action: function (e, dt, node, config) {
                     var ids = $.map(dt.rows({selected: true}).nodes(), function (entry) {
@@ -130,7 +145,7 @@
                 order: [[1, 'desc']],
                 pageLength: 100,
             });
-            $('.datatable-Role:not(.ajaxTable)').DataTable({buttons: dtButtons})
+            $('.datatable-User:not(.ajaxTable)').DataTable({buttons: dtButtons})
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 $($.fn.dataTable.tables(true)).DataTable()
                     .columns.adjust();

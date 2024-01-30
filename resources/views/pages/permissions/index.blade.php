@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.master')
 @section('content')
 @can('permission_create')
     <div style="margin-bottom: 10px;" class="row">
@@ -9,7 +9,7 @@
         </div>
     </div>
 @endcan
-<div class="card">
+<div class="card card-info card-outline mb-4">
     <div class="card-header">
         {{ trans('cruds.permission.title_singular') }} {{ trans('global.list') }}
     </div>
@@ -71,13 +71,14 @@
                         </tr>
                     @endforeach
                 </tbody>
+                <tfoot>
+                {{ $permissions->links() }}
+                </tfoot>
             </table>
+
         </div>
     </div>
 </div>
-
-
-
 @endsection
 @section('scripts')
 @parent

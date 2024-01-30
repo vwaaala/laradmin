@@ -20,9 +20,9 @@ class RolesController extends Controller
     {
         abort_if(Gate::denies('role_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $roles = Role::all();
+        $roles = Role::paginate(5);
 
-        return view('admin.roles.index', compact('roles'));
+        return view('pages.roles.index', compact('roles'));
     }
 
     public function create(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
@@ -31,7 +31,7 @@ class RolesController extends Controller
 
         $permissions = Permission::all()->pluck('title', 'id');
 
-        return view('admin.roles.create', compact('permissions'));
+        return view('pages.roles.create', compact('permissions'));
     }
 
     public function store(StoreRoleRequest $request): \Illuminate\Http\RedirectResponse
@@ -50,7 +50,7 @@ class RolesController extends Controller
 
         $role->load('permissions');
 
-        return view('admin.roles.edit', compact('permissions', 'role'));
+        return view('pages.roles.edit', compact('permissions', 'role'));
     }
 
     public function update(UpdateRoleRequest $request, Role $role): \Illuminate\Http\RedirectResponse
@@ -67,7 +67,7 @@ class RolesController extends Controller
 
         $role->load('permissions', 'rolesUsers');
 
-        return view('admin.roles.show', compact('role'));
+        return view('pages.roles.show', compact('role'));
     }
 
     public function destroy(Role $role): \Illuminate\Http\RedirectResponse

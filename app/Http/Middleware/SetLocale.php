@@ -8,9 +8,9 @@ class SetLocale
 {
     public function handle($request, Closure $next)
     {
-        if (request('change_language')) {
-            session()->put('language', request('change_language'));
-            $language = request('change_language');
+        if (request('lang')) {
+            session()->put('language', request('lang'));
+            $language = request('lang');
         } elseif (session('language')) {
             $language = session('language');
         } elseif (config('panel.primary_language')) {

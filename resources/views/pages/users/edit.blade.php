@@ -1,6 +1,12 @@
 @extends('layouts.master')
 @section('content')
-
+<div style="margin-bottom: 10px;" class="row">
+    <div class="col-lg-12">
+        <a class="btn btn-warning" href="{{ route('admin.users.index') }}">
+            {{ trans('global.back_to_list') }}
+        </a>
+    </div>
+</div>
 <div class="card">
     <div class="card-header">
         {{ trans('global.edit') }} {{ trans('cruds.user.title_singular') }}
@@ -44,8 +50,8 @@
             <div class="form-group">
                 <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>
                 <div style="padding-bottom: 4px">
-                    <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
-                    <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
+                    <span class="btn btn-dark select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
+                    <span class="btn btn-warning deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
                 </div>
                 <select class="form-control select2 {{ $errors->has('roles') ? 'is-invalid' : '' }}" name="roles[]" id="roles" multiple required>
                     @foreach($roles as $id => $roles)
@@ -59,8 +65,8 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.user.fields.roles_helper') }}</span>
             </div>
-            <div class="form-group">
-                <button class="btn btn-danger" type="submit">
+            <div class="form-group mt-2">
+                <button class="btn btn-success" type="submit">
                     {{ trans('global.save') }}
                 </button>
             </div>

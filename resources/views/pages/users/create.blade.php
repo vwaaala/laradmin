@@ -1,6 +1,12 @@
 @extends('layouts.master')
 @section('content')
-
+    <div style="margin-bottom: 10px;" class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-warning" href="{{ route('admin.users.index') }}">
+                {{ trans('global.back_to_list') }}
+            </a>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header">
             {{ trans('global.create') }} {{ trans('cruds.user.title_singular') }}
@@ -64,8 +70,8 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.user.fields.roles_helper') }}</span>
                 </div>
-                <div class="form-group">
-                    <button class="btn btn-danger" type="submit">
+                <div class="form-group mt-2">
+                    <button class="btn btn-success" type="submit">
                         {{ trans('global.save') }}
                     </button>
                 </div>
